@@ -1,0 +1,1 @@
+ Get-Mailbox -ResultSize Unlimited | where{$_.ArchiveDatabase -eq "dbname"} | Select-Object -First 20 | New-MoveRequest -ArchiveOnly -ArchiveTargetDatabase "dbname"

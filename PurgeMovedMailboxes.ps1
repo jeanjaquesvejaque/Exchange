@@ -1,0 +1,1 @@
+Get-MailboxStatistics -Database "dbname" | Where-Object {$_.DisconnectDate -Notlike $NULL} | foreach {Remove-StoreMailbox -Database "dbname" -Identity $_.mailboxguid -MailboxState SoftDeleted}
